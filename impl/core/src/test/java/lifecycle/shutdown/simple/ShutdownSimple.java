@@ -41,6 +41,7 @@ import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
 
+import br.gov.frameworkdemoiselle.annotation.Priority;
 import br.gov.frameworkdemoiselle.lifecycle.Shutdown;
 
 @ApplicationScoped
@@ -53,16 +54,19 @@ public class ShutdownSimple {
 	}
 
 	@Shutdown
+	@Priority(1)
 	public void unloadWithoutPriorityFirst() {
 		listShutdown.add(3);
 	}
 
 	@Shutdown
+	@Priority(2)
 	public void unloadWithoutPrioritySecond() {
 		listShutdown.add(2);
 	}
 
 	@Shutdown
+	@Priority(3)
 	public void unloadWithoutPriorityThird() {
 		listShutdown.add(1);
 	}

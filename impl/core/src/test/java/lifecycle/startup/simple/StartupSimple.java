@@ -41,6 +41,7 @@ import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
 
+import br.gov.frameworkdemoiselle.annotation.Priority;
 import br.gov.frameworkdemoiselle.lifecycle.Startup;
 
 @ApplicationScoped
@@ -53,16 +54,19 @@ public class StartupSimple {
 	}
 
 	@Startup
+	@Priority(1)
 	public void loadWithoutPriorityFirst() {
 		listStartup.add(1);
 	}
 
 	@Startup
+	@Priority(2)
 	public void loadWithoutPrioritySecond() {
 		listStartup.add(3);
 	}
 
 	@Startup
+	@Priority(3)
 	public void loadWithoutPriorityThird() {
 		listStartup.add(2);
 	}

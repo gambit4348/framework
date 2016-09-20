@@ -78,16 +78,16 @@ public final class Beans {
 	}
 
 	/**
-	 * Obtains a injectble instance of a bean, which have the given required type and qualifiers, and are available for
+	 * Obtains a injectable instance of a bean, which have the given required type and qualifiers, and are available for
 	 * injection in the point where this method was call.
 	 * 
 	 * @param beanClass
-	 *            the beanClass which instace is requested to be obtained.
+	 *            the beanClass which instance is requested to be obtained.
 	 * @param qualifiers
 	 *            a set of qualifiers with any quantity of elements (zero including).
-	 * @return Type a instace of the injected beanClass.
+	 * @return Type a instance of the injected beanClass.
 	 * @throws DemoiselleException
-	 *             if no bean are avaliable to be injected for the given Class and qualifiers.
+	 *             if no bean are available to be injected for the given Class and qualifiers.
 	 */
 	public static <T> T getReference(final Class<T> beanClass, Annotation... qualifiers) {
 		T instance;

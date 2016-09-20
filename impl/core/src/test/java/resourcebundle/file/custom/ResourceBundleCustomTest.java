@@ -67,6 +67,7 @@ public class ResourceBundleCustomTest {
 
 	@Test
 	public void loadResourceFileCustom() {
+		Locale.setDefault(new Locale("pt", ""));
 		bundleCustom = Beans.getReference(ResourceBundleCustom.class);
 		Assert.assertEquals("mensagem em Portugues", bundleCustom.getMessage());
 	}

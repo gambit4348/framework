@@ -44,6 +44,7 @@ import management.testclasses.ManagedClassStore;
 
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
+import org.jboss.arquillian.junit.InSequence;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Assert;
 import org.junit.Test;
@@ -59,7 +60,7 @@ import br.gov.frameworkdemoiselle.util.Beans;
 public class ManagementBootstrapTest {
 
 	/**
-	 * Deployment to test normal deployment behaviour
+	 * Deployment to test normal deployment behavior
 	 * 
 	 */
 	@Deployment
@@ -74,10 +75,10 @@ public class ManagementBootstrapTest {
 	 * {@link ManagementExtension}) is correctly detected.
 	 */
 	@Test
-	public void managementExtensionRegistration() {
+	@InSequence(1)
+    public void managementExtensionRegistration() {
 		// "store" é application scoped e é usado pelo DummyManagementExtension
-		// para
-		// armazenar todos os beans anotados com @ManagementController. Se o
+		// para armazenar todos os beans anotados com @ManagementController. Se o
 		// bootstrap rodou corretamente,
 		// ele chamou DummyManagementExtension.initialize e este store conterá o
 		// bean de teste que anotamos.
@@ -91,7 +92,8 @@ public class ManagementBootstrapTest {
 	 * upon application shutdown.
 	 */
 	@Test
-	public void managementExtensionShutdown() {
+	@InSequence(2)
+    public void managementExtensionShutdown() {
 		// "store" é application scoped e é usado pelo DummyManagementExtension
 		// para
 		// armazenar todos os beans anotados com @ManagementController. Se o
