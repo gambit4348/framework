@@ -44,7 +44,7 @@
 	<parent>
 		<groupId>br.gov.frameworkdemoiselle</groupId>
 		<artifactId>demoiselle-extension-parent</artifactId>
-		<version>2.4.2-SNAPSHOT</version>
+		<version>2.4.10</version>
 		<relativePath>../extension</relativePath>
 	</parent>
 
@@ -407,6 +407,18 @@
 			<url>https://oss.sonatype.org/content/repositories/releases</url>
 			<snapshots>
 				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+		<!-- Repositorio interno DSI UFPR -->
+		<repository>
+			<id>nexus</id>
+			<name>Nexus</name>
+			<url>http://homologa3.cce.ufpr.br:8080/nexus/content/groups/public</url>
+			<snapshots>
+				<enabled>true</enabled>
 			</snapshots>
 			<releases>
 				<enabled>true</enabled>
