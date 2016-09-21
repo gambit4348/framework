@@ -186,18 +186,6 @@
 				<enabled>true</enabled>
 			</releases>
 		</repository>	
-		<!-- Repositorio interno DSI UFPR -->
-		<repository>
-			<id>nexus</id>
-			<name>Nexus</name>
-			<url>http://homologa3.cce.ufpr.br:8080/nexus/content/groups/public</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-		</repository>
 	</repositories>
 
 
